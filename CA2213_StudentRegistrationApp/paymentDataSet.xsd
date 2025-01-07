@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="paymentDataSet" targetNamespace="http://tempuri.org/paymentDataSet.xsd" xmlns:mstns="http://tempuri.org/paymentDataSet.xsd" xmlns="http://tempuri.org/paymentDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="studentFeeManagementDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="studentFeeManagementDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CA2213_StudentRegistrationApp.Properties.Settings.GlobalReference.Default.studentFeeManagementDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StudentPaymentTableAdapter" GeneratorDataComponentClassName="StudentPaymentTableAdapter" Name="StudentPayment" UserDataComponentName="StudentPaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="studentFeeManagementDBConnectionString (Settings)" DbObjectName="studentFeeManagementDB.dbo.StudentPayment" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT StudentId, StdName, Subjects, Classes, Amount, Paid FROM dbo.StudentPayment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StudentId" DataSetColumn="StudentId" />
+              <Mapping SourceColumn="StdName" DataSetColumn="StdName" />
+              <Mapping SourceColumn="Subjects" DataSetColumn="Subjects" />
+              <Mapping SourceColumn="Classes" DataSetColumn="Classes" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Paid" DataSetColumn="Paid" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="paymentDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="paymentDataSet" msprop:Generator_DataSetName="paymentDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StudentPayment" msprop:Generator_RowEvHandlerName="StudentPaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentPaymentRowDeleted" msprop:Generator_RowDeletingName="StudentPaymentRowDeleting" msprop:Generator_RowEvArgName="StudentPaymentRowChangeEvent" msprop:Generator_TablePropName="StudentPayment" msprop:Generator_RowChangedName="StudentPaymentRowChanged" msprop:Generator_RowChangingName="StudentPaymentRowChanging" msprop:Generator_TableClassName="StudentPaymentDataTable" msprop:Generator_RowClassName="StudentPaymentRow" msprop:Generator_TableVarName="tableStudentPayment" msprop:Generator_UserTableName="StudentPayment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StudentId" msprop:Generator_ColumnPropNameInRow="StudentId" msprop:Generator_ColumnPropNameInTable="StudentIdColumn" msprop:Generator_ColumnVarNameInTable="columnStudentId" msprop:Generator_UserColumnName="StudentId" type="xs:int" />
+              <xs:element name="StdName" msprop:Generator_ColumnPropNameInRow="StdName" msprop:Generator_ColumnPropNameInTable="StdNameColumn" msprop:Generator_ColumnVarNameInTable="columnStdName" msprop:Generator_UserColumnName="StdName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Subjects" msprop:Generator_ColumnPropNameInRow="Subjects" msprop:Generator_ColumnPropNameInTable="SubjectsColumn" msprop:Generator_ColumnVarNameInTable="columnSubjects" msprop:Generator_UserColumnName="Subjects" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Classes" msprop:Generator_ColumnPropNameInRow="Classes" msprop:Generator_ColumnPropNameInTable="ClassesColumn" msprop:Generator_ColumnVarNameInTable="columnClasses" msprop:Generator_UserColumnName="Classes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Paid" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Paid" msprop:Generator_ColumnPropNameInTable="PaidColumn" msprop:Generator_ColumnVarNameInTable="columnPaid" msprop:Generator_UserColumnName="Paid" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StudentPayment" />
+      <xs:field xpath="mstns:StudentId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
